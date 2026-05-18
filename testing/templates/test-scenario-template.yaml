@@ -1,0 +1,35 @@
+# Test Scenario Template
+# Used by test-scenario-writer skill to generate standardized test cases
+
+test_case:
+  id: "TC-{module}-{sequence}"
+  title: ""
+  priority: "P0"  # P0, P1, P2, P3
+  severity: "Critical"  # Critical, Major, Minor, Trivial
+  type: "Functional"  # Functional, Negative, Boundary, Security, Performance
+  feature: "" 
+  module: ""
+  source: ""  # Reference to AC, BR, or requirement ID
+
+  preconditions:
+    - ""
+
+  test_data:
+    # Key-value pairs for input data
+    field_name: "value"
+
+  test_steps:
+    - step: 1
+      action: ""
+      expected: ""
+
+  expected_results:
+    - ""
+
+  postconditions:
+    - ""
+
+  tags:
+    - ""
+
+  attachments: []

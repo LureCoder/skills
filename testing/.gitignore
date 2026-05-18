@@ -1,0 +1,18 @@
+# Environment
+.env
+*.local
+
+# Output
+output/
+*.xlsx
+
+# IDE
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

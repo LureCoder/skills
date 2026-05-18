@@ -1,0 +1,76 @@
+# Agent Configuration for Test Scenario Generation
+# This file defines how the 3 skills work together as a pipeline
+
+agent:
+  name: "test-scenario-generator"
+  version: "1.0.0"
+  
+  description: >
+    Converts Confluence feature documents into structured test scenarios.
+    Uses VS Code Confluence MCP plugin to read pages, analyzes the content,
+    and generates comprehensive test cases.
+
+skills:
+  - name: "confluence-reader"
+    path: "../skills/confluence-reader"
+    required: true
+    
+  - name: "feature-analyzer"
+    path: "../skills/feature-analyzer"
+    required: true
+    
+  - name: "test-scenario-writer"
+    path: "../skills/test-scenario-writer"
+    required: true
+
+pipeline:
+  default_flow:
+    - skill: confluence-reader
+      description: "Read feature documentation from Confluence via MCP"
+      
+    - skill: feature-analyzer
+      description: "Analyze and extract testing requirements"
+      
+    - skill: test-scenario-writer
+      description: "Generate structured test scenarios"
+      params:
+        format: "markdown"
+
+  partial_flows:
+    read_only:
+      - skill: confluence-reader
+    
+    analyze_only:
+      - skill: feature-analyzer
+    
+    generate_only:
+      - skill: test-scenario-writer
+
+output:
+  default_format: "markdown"
+  supported_formats:
+    - "markdown"
+    - "gherkin"
+    - "json"
+    - "xlsx"
+  
+  default_path: "./output/test-scenarios"
+
+conventions:
+  test_case_id_pattern: "TC-{MODULE}-{SEQ}"
+  module_code_length: 4
+  sequence_digits: 3
+  
+  priority_levels:
+    - code: "P0"
+      description: "Core functionality, security, data loss prevention"
+    - code: "P1"
+      description: "Major feature, common user scenarios, error handling"
+    - code: "P2"
+      description: "Minor features, edge cases, boundary conditions"
+    - code: "P3"
+      description: "UI polish, rare edge cases, cosmetic issues"
+
+templates:
+  test_case: "../templates/test-scenario-template.yaml"
+  feature_analysis: "../templates/feature-analysis-template.md"

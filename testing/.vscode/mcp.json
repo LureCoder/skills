@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "confluence": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mcp-confluence/server"
+      ],
+      "env": {
+        "CONFLUENCE_URL": "https://your-domain.atlassian.net/wiki",
+        "CONFLUENCE_API_TOKEN": "${CONFLUENCE_API_TOKEN}",
+        "CONFLUENCE_USERNAME": "${CONFLUENCE_EMAIL}"
+      }
+    }
+  }
+}
