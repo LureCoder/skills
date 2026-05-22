@@ -1,31 +1,43 @@
 ---
-name: 美观单体HTML一键生成
-description: 输出无外部依赖单HTML文件，现代UI、响应式布局，自带样式交互动画
-author: AI Skill
-version: 1.0
-tags: html,ui,page,agent-skill,single-file
+name: "html-page-generator"
+description: "Generates standalone single-file HTML pages with modern UI, responsive layout, and animations. Invoke when user needs landing pages, dashboards, portfolios, forms, presentations, or any browser-viewable UI without external dependencies."
 ---
 
-## 核心强制规范
-1. 最终仅输出**单个完整html文件**，无外链CDN、无外部资源引用
-2. 全部样式内联/内部style标签，原生JS实现交互，双击即可浏览器打开
-3. 默认做移动端+桌面端响应式适配，布局自适应缩放
-4. 代码结构整洁语义化，注释精简不冗余
+# Single-File HTML Page Generator
 
-## UI设计标准
-- 配色：采用协调商务/极简/高级渐变色系，避免刺眼杂乱配色
-- 排版：层级分明，字体间距留白合规，阅读舒适度优先
-- 视觉：合理阴影圆角、简约图标、轻量hover动效，拒绝廉价样式
-- 风格可选：极简风、玻璃拟态、暗黑模式、商务卡片、科技大屏
+## Core Mandatory Rules
 
-## 支持生成场景
-个人主页、落地宣传页、简历作品集、数据仪表盘、图表统计页
-登录表单、问卷反馈、404页面、HTML幻灯片、简易前端小工具
+1. Output only a **single complete HTML file** - no CDN links, no external resource references
+2. All styles must be inline or in internal `<style>` tags; all interactions via vanilla JS. File must open directly in a browser by double-click
+3. Responsive design for both mobile and desktop, layout adapts automatically
+4. Clean, semantic HTML structure with minimal comments
 
-## 交互能力
-滚动渐入、悬停反馈、平滑跳转、基础表单校验、数据图表渲染
+## UI Design Standards
 
-## 输出要求
-1. 只返回完整html代码块，不额外多余解释文字
-2. 根据需求自动匹配对应版式与视觉风格
-3. 保证浏览器全兼容，打开无报错、样式正常渲染
+- **Color scheme**: Professional, minimalist, or premium gradients. Avoid harsh or clashing colors
+- **Typography**: Clear hierarchy, proper spacing and whitespace, reading comfort first
+- **Visual effects**: Tasteful shadows, rounded corners, simple icons, lightweight hover animations. Avoid cheap-looking styles
+- **Available themes**: Minimalist, Glassmorphism, Dark Mode, Business Cards, Tech Dashboard
+
+## Supported Scenarios
+
+| Category | Examples |
+|----------|----------|
+| Profile | Personal homepage, landing page, resume/portfolio |
+| Data | Dashboard, charts, statistics page |
+| Forms | Login form, survey/feedback, registration |
+| Utility | 404 page, HTML slideshow, simple frontend tools |
+
+## Interaction Capabilities
+
+- Scroll-triggered fade-in animations
+- Hover feedback effects
+- Smooth anchor scroll navigation
+- Basic form validation
+- Data chart rendering
+
+## Output Requirements
+
+1. Return only a complete HTML code block with no extra explanatory text
+2. Automatically match the appropriate layout and visual style based on the request
+3. Ensure full browser compatibility, no errors on open, all styles render correctly
