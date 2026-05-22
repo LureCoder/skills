@@ -1,7 +1,3 @@
-# 合并全能单体HTML生成 Skill.md
-直接复制全文保存为 `html-generate.skill.md`，Agent 即可调用
-
-```markdown
 ---
 name: 美观单体HTML一键生成
 description: 输出无外部依赖单HTML文件，现代UI、响应式布局，自带样式交互动画
@@ -33,4 +29,3 @@ tags: html,ui,page,agent-skill,single-file
 1. 只返回完整html代码块，不额外多余解释文字
 2. 根据需求自动匹配对应版式与视觉风格
 3. 保证浏览器全兼容，打开无报错、样式正常渲染
-```
